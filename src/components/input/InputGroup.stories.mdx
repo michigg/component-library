@@ -1,0 +1,31 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import InputGroup from './InputGroup.vue';
+
+<Meta
+    title="Atoms/InputGroup"
+    component={InputGroup}
+/>
+
+export const Template = (args) => ({
+  components: { InputGroup },
+  setup() {
+    return { args };
+  },
+  template: '<InputGroup v-bind="args" />',
+});
+
+# InputGroup
+This is a *basic input* component.
+It can be used for Text, Number, E-Mail etc input.
+
+<Story
+    name="Primary"
+    args={{
+        id: 'input',
+        label: 'Text Input'
+    }}
+>
+  {Template.bind({})}
+</Story>
+
