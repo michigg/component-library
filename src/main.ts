@@ -1,9 +1,6 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import { store, key } from './store'
+import Badge from './atoms/Badge.vue'
+import ButtonBase from './atoms/ButtonBase.vue'
+import Headline from './atoms/Headline.vue'
+import Icon from './atoms/Icon.vue'
 
-const app = createApp(App)
-app.use(router)
-app.use(store, key)
-app.mount('#app')
+export default { Badge, ButtonBase, Headline, Icon }
