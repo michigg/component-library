@@ -1,40 +1,58 @@
 {
   "name": "@michigg/component-library",
-  "version": "0.1.1",
+  "version": "0.1.12",
   "license": "MIT",
-  "scripts": {
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types"
+  "author": {
+    "name": "Michael Götz",
+    "email": "michael-guenther.goetz@stud.uni-bamberg.de"
   },
-  "files": ["dist"],
-  "main": "./dist/component-library.umd.js",
-  "module": "./dist/component-library.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michigg/component-library"
+  },
+  "keywords": [
+    "vue3",
+    "vuejs",
+    "vite",
+    "typescript",
+    "ui",
+    "library"
+  ],
+  "scripts": {
+    "build": "vue-tsc && vite build"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/library.umd.js",
+  "module": "./dist/library.es.js",
+  "types": "./dist/types/index.d.ts",
+  "private": false,
   "exports": {
     ".": {
-      "import": "./dist/component-library.es.js",
-      "require": "./dist/component-library.umd.js"
-    }
+      "import": "./dist/library.es.js",
+      "require": "./dist/library.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
-  "types": "./dist/types/index.d.ts",
-  "dependencies": {
+  "peerDependencies": {
     "vue": ">=3.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@vitejs/plugin-vue": "^1.9.3",
+    "@vitejs/plugin-vue": "^2.3.1",
     "@vue/eslint-config-standard": "^6.1.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-rc.17",
-    "@vue/vue3-jest": "^27.0.0-alpha.4",
+    "@vue/eslint-config-typescript": "^10.0.0",
     "babel-loader": "^8.2.3",
-    "eslint": "^7.20.0",
+    "eslint": "^8.13.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-vue": "^7.2.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^8.6.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
-    "vue-loader": "^16.8.3",
-    "vue-tsc": "^0.3.0"
+    "vue-loader": "^17.0.0",
+    "vue-tsc": "^0.34.7"
   }
 }

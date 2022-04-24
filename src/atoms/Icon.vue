@@ -6,14 +6,6 @@
   ></i>
 </template>
 
-<script>
-export default {
-  name: 'Icon',
-  props: {
-    iconKey: {
-      type: String,
-      required: true
-    }
-  }
-}
+<script lang="ts" setup>
+defineProps<{iconKey: string}>()
 </script>

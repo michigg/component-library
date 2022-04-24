@@ -7,14 +7,6 @@
   </h1>
 </template>
 
-<script>
-export default {
-  name: 'Headline',
-  props: {
-    title: {
-      type: String,
-      required: true
-    }
-  }
-}
+<script lang="ts" setup>
+defineProps<{title: string}>()
 </script>
