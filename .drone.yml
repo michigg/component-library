@@ -67,10 +67,6 @@ steps:
   - name: publish-to-gh-pages
     image: plugins/gh-pages
     settings:
-      username:
-        from_secret: github_username
-      password:
-        from_secret: github_token
       pages_directory: storybook-static/
       target_branch: gh-pages
       upstream_name: origin
