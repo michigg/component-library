@@ -25,6 +25,7 @@
     "build": "vue-tsc && vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "ci": "yarn install --non-interactive --frozen-lockfile",
     "test": "jest",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
   },
