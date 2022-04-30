@@ -6,6 +6,9 @@
     "name": "Michael Götz",
     "email": "michael-guenther.goetz@stud.uni-bamberg.de"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/michigg/component-library"
