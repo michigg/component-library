@@ -22,7 +22,8 @@
     "build": "vue-tsc && vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "test": "jest",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
   },
   "files": [
     "dist"
@@ -48,6 +49,8 @@
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
     "@storybook/addon-storyshots": "^6.4.22",
+    "@bissolli/storybook-css-properties": "^0.0.14",
+    "@storybook/addon-jest": "^6.4.22",
     "@storybook/builder-vite": "^0.1.30",
     "@storybook/vue3": "^6.4.22",
     "@types/jest": "^27.4.1",
@@ -69,5 +72,8 @@
     "vue-jest": "^3.0.7",
     "vue-loader": "^16.8.3",
     "vue-tsc": "^0.34.7"
+  },
+  "dependencies": {
+    "vue": "^3.2.33"
   }
 }

@@ -9,9 +9,13 @@
 
 <style scoped>
 .badge {
+  background-color: var(--color-primary);
+  color: var(--color-text-button);
+  
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+
+  padding: var(--space-xxs) var(--space-xs);
   border-radius: 1rem;
-  background-color: var(--background-color, #000);
-  color: var(--color, #fff);
-  padding: .25rem .75rem;
 }
 </style>

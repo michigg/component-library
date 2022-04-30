@@ -1,0 +1,87 @@
+:root {
+    /* Spaces */
+    --space-xxs: .25rem;
+    --space-xs: .5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 6rem;
+}
+
+:root {
+    --font-size-sm: .75rem;
+    --font-size-md: 1rem;
+}
+
+:root {
+    /* Shadows */
+    --shadow-inset-md: inset 0.25rem 0.25rem 0.5rem var(--color-shadow);
+}
+
+:root {
+    /* Border */
+    --border-size-xs: 1px;
+
+    --radius-sm: .5rem;
+    --radius-md: 1rem;
+}
+
+:root {
+    color-scheme: dark light;
+
+    --card-radius: 1rem;
+
+    
+
+     /* Colors */
+    --hue: 36;
+    --hue-danger: 10;
+    --hue-success: 120;
+    --hue-info: 200;
+
+    --color-primary: hsl(var(--hue), 100%, 55%);
+    --color-primary-border: hsl(var(--hue) 30% 20%);
+    --color-focus: hsl(var(--hue) 60% 35%);
+    --color-info: hsl(var(--hue-info) 60% 35%);
+    --color-danger: hsl(var(--hue-danger) 100% 50%);
+    --color-success: hsl(var(--hue-success), 100%, 50%);
+
+    --color-text: hsl(var(--hue), 50%, 90%);
+    --color-text-headline: hsl(var(--hue), 50%, 85%);
+    --color-text-sub: hsl(var(--hue), 50%, 90%);
+    --color-text-button: hsl(var(--hue), 50%, 10%);
+
+    --color-surface-1: hsl(var(--hue), 30%, 15%);
+    --color-surface-2: hsl(var(--hue), 50%, 20%);
+    --color-surface-3: hsl(var(--hue), 50%, 25%);
+    --color-surface-button: hsl(var(--hue), 100%, 50%);
+    --color-surface-success: hsl(var(--hue-success), 50%, 25%);
+    --color-surface-success-hover: hsl(var(--hue-success), 50%, 30%);
+
+    /* Shadows */
+    --shadow-inset-md: inset 0.25rem 0.25rem 0.5rem hsl(var(--hue), 100%, 20%);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-primary: hsl(var(--hue), 100%, 50%);
+        --color-primary-border: hsl(var(--hue) 30% 20%);
+        --color-focus: hsl(var(--hue) 60% 35%);
+        --color-info: hsl(var(--hue-info) 90% 75%);
+        --color-danger: hsl(var(--hue-danger) 100% 50%);
+        --color-success: hsl(var(--hue-success), 100%, 30%);
+
+        --color-text: hsl(var(--hue), 50%, 10%);
+        --color-text-headline: hsl(var(--hue), 50%, 25%);
+        --color-text-sub: hsl(var(--hue), 50%, 10%);
+        --color-text-button: hsl(var(--hue), 50%, 95%);
+
+        --color-surface-1: hsl(var(--hue), 10%, 95%);
+        --color-surface-2: hsl(var(--hue), 100%, 80%);
+        --color-surface-3: hsl(var(--hue), 100%, 65%);
+        --color-surface-button: hsl(var(--hue), 100%, 50%);
+        --color-surface-success: hsl(var(--hue-success), 65%, 60%);
+        --color-surface-success-hover: hsl(var(--hue-success), 65%, 50%);
+    }
+}

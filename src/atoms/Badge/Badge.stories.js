@@ -3,7 +3,14 @@ import Badge from './Badge.vue';
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
   title: 'atoms/Badge',
-  component: Badge
+  component: Badge,
+  argTypes: {
+    default: {
+      control: 'text',
+      description: 'Slot content',
+      defaultValue: 'Badge'
+    }
+  }
 };
 
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
@@ -15,7 +22,7 @@ const Template = (args) => ({
     return { args };
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<Badge v-bind="args">Test</Badge>',
+  template: '<Badge v-bind="args">{{ args.default }}</Badge>',
 });
 
 export const Primary = Template.bind({});
