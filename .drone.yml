@@ -54,7 +54,7 @@ steps:
       email: 
         from_secret: npm_email
       registry: "https://npm.pkg.github.com"
-      depends_on:
+    depends_on:
       - build
   
   - name: build-documentation
