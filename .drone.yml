@@ -1,0 +1,112 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: install
+    image: node:latest
+    commands:
+      - yarn ci
+
+#  - name: lint
+#    image: node:latest
+#    commands:
+#      - yarn lint
+#    depends_on:
+#      - install
+
+  - name: unit-test
+    image: node:latest
+    commands:
+      - yarn test --ci --coverage
+    depends_on:
+      - install
+
+  - name: code-analysis
+    image: aosapps/drone-sonar-plugin
+    settings:
+      sonar_host:
+        from_secret: sonar_host
+      sonar_token:
+        from_secret: sonar_token
+      level: DEBUG
+      showProfiling: true
+    depends_on:
+      - unit-test
+
+  - name: build
+    image: node:latest
+    commands:
+      - yarn build
+    depends_on:
+      - code-analysis
+  
+  - name: publish-to-registry
+    image: plugins/npm
+    settings:
+      token:
+        from_secret: npm_token
+      email: 
+        from_secret: npm_email
+      registry: "https://npm.pkg.github.com"
+      depends_on:
+      - build
+  
+  - name: build-documentation
+    image: node:latest
+    commands:
+      - yarn build-storybook
+    depends_on:
+      - publish-to-registry
+
+  - name: publish-to-gh-pages
+    image: plugins/gh-pages
+    settings:
+      username:
+        from_secret: github_username
+      password:
+        from_secret: github_token
+      pages_directory: storybook-static/
+      target_branch: gh-pages
+      upstream_name: origin
+    depends_on:
+      - build-documentation
+
+  - name: notify
+    image: plugins/matrix
+    settings:
+      homeserver:
+        from_secret: matrix_homeserver
+      roomid:
+        from_secret: matrix_roomid
+      userid:
+        from_secret: matrix_userid
+      accesstoken:
+        from_secret: matrix_accesstoken
+      template: >
+        {{#success build.status}}
+        ✅ {{repo.owner}}/{{repo.name}}  {{build.number}}
+        {{else}}
+        ❌ {{repo.owner}}/{{repo.name}} {{build.number}}
+        {{/success}}
+        depends_on:
+        - deploy
+    when:
+      status:
+        - success
+        - failure
+    depends_on:
+      - publish-to-gh-pages
+
+trigger:
+  event:
+    - cron
+    - custom
+    - push
+    - pull_request
+    - tag
