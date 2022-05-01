@@ -54,6 +54,9 @@ steps:
       registry: "https://npm.pkg.github.com"
     depends_on:
       - build
+    when:
+      event:
+        - tag
   
   - name: build-documentation
     image: node:16-alpine3.14
