@@ -50,9 +50,7 @@ steps:
     image: plugins/npm
     settings:
       token:
-        from_secret: npm_token
-      email: 
-        from_secret: npm_email
+        from_secret: github_registry_token
       registry: "https://npm.pkg.github.com"
     depends_on:
       - build
