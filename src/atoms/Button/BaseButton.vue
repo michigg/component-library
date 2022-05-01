@@ -22,8 +22,8 @@ button {
   transition: box-shadow 150ms ease-out;
 }
 
-button:hover, 
-button:active, 
+button:hover,
+button:active,
 button.active {
   box-shadow: var(--shadow-inset-md);
 }
