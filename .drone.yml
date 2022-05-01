@@ -64,6 +64,9 @@ steps:
       - yarn build-storybook
     depends_on:
       - publish-to-registry
+    when:
+      event:
+        - tag
 
   - name: publish-to-gh-pages
     image: plugins/gh-pages
@@ -73,6 +76,9 @@ steps:
       upstream_name: origin
     depends_on:
       - build-documentation
+    when:
+      event:
+        - tag
 
   - name: notify
     image: plugins/matrix
