@@ -13,19 +13,19 @@ steps:
     commands:
       - yarn ci
 
-#  - name: lint
-#    image: node:latest
-#    commands:
-#      - yarn lint
-#    depends_on:
-#      - install
+  - name: lint
+    image: node:latest
+    commands:
+      - yarn lint
+    depends_on:
+      - install
 
   - name: unit-test
     image: node:latest
     commands:
       - yarn test --ci --coverage
     depends_on:
-      - install
+      - lint
 
   - name: code-analysis
     image: aosapps/drone-sonar-plugin
