@@ -22,15 +22,19 @@
     "paths": {
       "@/*": ["src/*"],
     },
+    "types": [
+      "vite/client",
+      "@types/jest"
+    ]
   },
   "exclude": [
     "node_modules", 
     "dist",
+    "src/**/*.stories.js",
+    "src/**/*.stories.ts",
     "src/**/*.spec.ts"
   ],
   "include": [
-    "stories/**/*.js",
-    "stories/**/*.ts",
     "src/**/*.js",
     "src/**/*.ts",
     "src/**/*.d.ts",

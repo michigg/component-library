@@ -7,7 +7,7 @@
     "email": "michael-guenther.goetz@stud.uni-bamberg.de"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "library"
   ],
   "scripts": {
+    "lint": "eslint src --ext .ts",
     "build": "vue-tsc && vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -48,36 +49,40 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
+    "@bissolli/storybook-css-properties": "^0.0.14",
     "@storybook/addon-a11y": "^6.4.22",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/addon-storyshots": "^6.4.22",
-    "@bissolli/storybook-css-properties": "^0.0.14",
     "@storybook/addon-jest": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
     "@storybook/builder-vite": "^0.1.30",
     "@storybook/vue3": "^6.4.22",
     "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vue/eslint-config-standard": "^6.1.0",
     "@vue/eslint-config-typescript": "^10.0.0",
     "@vue/test-utils": "^2.0.0-rc.21",
     "babel-loader": "^8.2.3",
-    "eslint": "^8.13.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint": "^8.14.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-vue": "^8.6.0",
+    "eslint-plugin-storybook": "^0.5.11",
+    "eslint-plugin-vue": "^8.7.1",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.3",
-    "vite": "^2.6.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.6",
     "vue-jest": "^3.0.7",
-    "vue-loader": "^16.8.3",
-    "vue-tsc": "^0.34.7"
+    "vue-loader": "^17.0.0",
+    "vue-tsc": "^0.34.11"
   },
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": ">=3.2.0"
   }
 }
