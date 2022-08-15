@@ -1,0 +1,38 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+// For more information about ColorPalette, ColorItem see https://storybook.js.org/docs/ember/writing-docs/doc-block-colorpalette
+
+<Meta title="Guide/Colors" />
+
+# Colors Overview
+
+## Light Theme
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    colors={['var(--color-primary)', 'var(--color-primary-border)']}
+  />
+  <ColorItem
+    title="Info"
+    colors={['var(--color-info)']}
+  />
+  <ColorItem
+    title="Focus"
+    colors={['var(--color-focus)']}
+  />
+  <ColorItem
+    title="Danger"
+    colors={['var(--color-danger)']}
+  />
+  <ColorItem
+    title="Success"
+    colors={['var(--color-success)', 'var(--color-surface-success)', 'var(--color-surface-success-hover)']}
+  />
+  <ColorItem
+    title="Text"
+    colors={['var(--color-text)', 'var(--color-text-headline)', 'var(--color-text-sub)', 'var(--color-text-button)']}
+  />
+  <ColorItem
+    title="Surface"
+    colors={['var(--color-surface-1)', 'var(--color-surface-2)', 'var(--color-surface-3)', 'var(--color-surface-button)']}
+  />
+</ColorPalette>

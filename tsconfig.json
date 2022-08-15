@@ -23,12 +23,11 @@
       "@/*": ["src/*"],
     },
     "types": [
-      "vite/client",
-      "@types/jest"
+      "vite/client"
     ]
   },
   "exclude": [
-    "node_modules", 
+    "node_modules",
     "dist",
     "src/**/*.stories.js",
     "src/**/*.stories.ts",

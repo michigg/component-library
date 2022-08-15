@@ -11,7 +11,7 @@
 .badge {
   background-color: var(--color-primary);
   color: var(--color-text-button);
-  
+
   font-size: var(--font-size-sm);
   font-weight: bold;
 

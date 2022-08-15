@@ -19,7 +19,7 @@ export const parameters = {
         description: 'This property is the only one coming from the `Text` component',
         // if you want to group items, use this props
         // this has a higher weight than the following `matchCategory`
-        category: 'Button properties'
+        category: 'BaseButton properties'
       },
     },
     // props listed here won't be visible in the panel to be customized
