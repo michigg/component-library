@@ -6,8 +6,8 @@
 <style scoped>
 .base-list {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
+  flex-direction: var(--direction, column);
+  gap: var(--gap, var(--space-xs));
   margin: 0;
   padding: 0;
 }

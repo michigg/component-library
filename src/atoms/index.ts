@@ -11,6 +11,7 @@ import InputGroup from '@/atoms/inputs/InputGroup/InputGroup.vue'
 import InputGroupCheckbox from '@/atoms/inputs/InputGroupCheckbox/InputGroupCheckbox.vue'
 import SelectGroup from '@/atoms/inputs/SelectGroup/SelectGroup.vue'
 import BaseList from '@/atoms/list/BaseList/BaseList.vue'
+import BaseInlineList from '@/atoms/list/BaseInlineList/BaseInlineList.vue'
 import BaseListElement from '@/atoms/list/BaseListElement/BaseListElement.vue'
 
 export {
@@ -27,5 +28,6 @@ export {
   InputGroupCheckbox,
   SelectGroup,
   BaseList,
+  BaseInlineList,
   BaseListElement
 }
