@@ -66,9 +66,9 @@ steps:
       registry: "https://registry.npmjs.org"
     depends_on:
       - build
-    when:
-      event:
-        - tag
+#    when:
+#      event:
+#        - tag
 
   - name: build-documentation
     image: node:16-alpine3.14
