@@ -9,8 +9,8 @@
 
 <style scoped>
 .badge {
-  background-color: var(--color-primary);
-  color: var(--color-text-button);
+  background-color: var(--color-surface-badge, var(--color-primary));
+  color: var(--color-badge, var(--color-text-button));
 
   font-size: var(--font-size-sm);
   font-weight: bold;
