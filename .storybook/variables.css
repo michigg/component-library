@@ -17,6 +17,7 @@
 :root {
     /* Shadows */
     --shadow-inset-md: inset 0.25rem 0.25rem 0.5rem var(--color-shadow);
+    --shadow-sm: 0.25rem 0.25rem 0.5rem var(--color-shadow, black);
 }
 
 :root {
@@ -32,7 +33,7 @@
 
     --card-radius: 1rem;
 
-    
+
 
      /* Colors */
     --hue: 36;

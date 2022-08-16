@@ -17,7 +17,7 @@ withDefaults(
     title?: string;
   }>(),
   {
-    title: ""
+    title: ''
   }
 )
 </script>

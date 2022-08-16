@@ -23,7 +23,7 @@ steps:
   - name: unit-test
     image: node:latest
     commands:
-      - yarn test --ci --coverage
+      - yarn test --coverage
     depends_on:
       - lint
 
@@ -45,25 +45,26 @@ steps:
       - yarn build
     depends_on:
       - code-analysis
-  
-  - name: publish-to-registry
+
+  - name: publish-to-npm
     image: plugins/npm
     settings:
       token:
-        from_secret: github_registry_token
-      registry: "https://npm.pkg.github.com"
+        from_secret: npm_registry_token
+      registry: "https://registry.npmjs.org"
+      access: "public"
     depends_on:
       - build
     when:
       event:
         - tag
-  
+
   - name: build-documentation
     image: node:16-alpine3.14
     commands:
       - yarn build-storybook
     depends_on:
-      - publish-to-registry
+      - publish-to-npm
     when:
       event:
         - tag

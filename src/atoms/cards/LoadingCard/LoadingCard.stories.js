@@ -1,14 +1,14 @@
-import Badge from './Badge.vue'
+import LoadingCard from './LoadingCard.vue'
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-  title: 'atoms/badge/Badge',
-  component: Badge,
+  title: 'atoms/cards/LoadingCard',
+  component: LoadingCard,
   argTypes: {
     default: {
       control: 'text',
       description: 'Slot content',
-      defaultValue: 'Badge'
+      defaultValue: 'Loading Card Content'
     }
   }
 }
@@ -16,13 +16,20 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args) => ({
   // Components used in your story `template` are defined in the `components` object
-  components: { Badge },
+  components: { LoadingCard },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup () {
     return { args }
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: '<Badge v-bind="args">{{ args.default }}</Badge>'
+  template: '<LoadingCard v-bind="args">{{ args.default }}</LoadingCard>'
 })
 
-export const Primary = Template.bind({})
+export const Default = Template.bind({})
+Default.args = {
+  title: undefined
+}
+export const WithTitle = Template.bind({})
+WithTitle.args = {
+  title: 'Hello World.'
+}
