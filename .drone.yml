@@ -64,6 +64,7 @@ steps:
       token:
         from_secret: npm_registry_token
       registry: "https://registry.npmjs.org"
+      access: "public"
     depends_on:
       - build
 #    when:
