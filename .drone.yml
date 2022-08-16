@@ -58,12 +58,25 @@ steps:
       event:
         - tag
 
+  - name: publish-to-npm
+    image: plugins/npm
+    settings:
+      token:
+        from_secret: npm_registry_token
+      registry: "https://registry.npmjs.org"
+    depends_on:
+      - build
+    when:
+      event:
+        - tag
+
   - name: build-documentation
     image: node:16-alpine3.14
     commands:
       - yarn build-storybook
     depends_on:
       - publish-to-registry
+      - publish-to-npm
     when:
       event:
         - tag
